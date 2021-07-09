@@ -15,7 +15,9 @@ export = function svgrPlugin(): Plugin {
 
         const componentCode = await svgr(
           svg,
-          {},
+          {
+            svgo: true
+          },
           { componentName: 'ReactComponent' }
         ).then((res: string) => {
           return res.replace(
